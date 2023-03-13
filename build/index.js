@@ -16,6 +16,7 @@ var PORT = process.env.PORT || 4000;
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use(express_1.default.json());
 app.use('/api', images_1.default);
+app.use('/images', express_1.default.static('assets'));
 app.listen(PORT, function () {
     fileManager_1.default.isThumbFolderAndCreate();
     console.log("Listening to requests on http://localhost:".concat(PORT));

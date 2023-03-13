@@ -7,7 +7,7 @@
     "prettier": "prettier --config .prettierrc 'src' --write",
     "build": "npx tsc && prettier --config .prettierrc 'src' --write",
     "jasmine": "jasmine",
-    "start": "nodemon ./build/index.js",
+    "start": "npm run build && nodemon ./build/index.js",
     "lint": "eslint . --ext .ts",
     "test": "npx tsc && npm run jasmine"
   },
@@ -47,6 +47,7 @@
     "jasmine": "^4.4.0",
     "jasmine-spec-reporter": "^7.0.0",
     "morgan": "^1.10.0",
+    "react-router-dom": "^6.4.3",
     "sharp": "^0.31.0",
     "supertest": "^6.2.4"
   }

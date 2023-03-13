@@ -5,8 +5,10 @@ import inputQuery from '../inputQuery';
 const router: express.Router = express.Router();
 
 const isValid = async (input: inputQuery): Promise<boolean | string> => {
+  console.log(input.imagename);
+  console.log(input.width);
   if (Object.keys(input).length === 0) {
-    return 'Please Enter a Valid Query in the Form: http://localhost:4000/api?filename={filename.jpg}&height={height}&width={width}';
+    return 'Please Enter a Valid Query in the Form: http://localhost:4000/api?imagename={filename.jpg}&height={height}&width={width}';
   }
 
   if (
@@ -58,6 +60,24 @@ router.get(
       res.sendFile(await fileManager.createProcessedImagePath(Query));
     } else {
       res.sendFile(checkCache as string);
+    }
+  }
+);
+
+router.get(
+  '/full',
+  async (req: express.Request, res: express.Response): Promise<void> => {
+    try {
+      let imagesURL: string[] = [];
+      for (let i = 0; i < fileManager.availableImageList().length; i++) {
+        imagesURL[i] = `http://localhost:4000/images/full/${
+          fileManager.availableImageList()[i]
+        }`;
+      }
+      res.send(imagesURL);
+    } catch (error) {
+      console.log('Error Finding Avaialable Images Dir');
+      res.send(error);
     }
   }
 );

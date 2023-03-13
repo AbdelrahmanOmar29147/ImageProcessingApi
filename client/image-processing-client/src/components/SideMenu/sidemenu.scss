@@ -1,0 +1,98 @@
+.sidemenu {
+  width: 19.167%;
+  display: flex;
+  flex-direction: column;
+  .sidemenu__top {
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    .sidemenu__top--logo {
+      width: 45%;
+      padding-left: 1em;
+      cursor: pointer;
+    }
+    .sidemenu__top--title {
+      background: transparent;
+      color: white;
+      font-family: 'Ubuntu';
+      font-weight: 400;
+      font-size: 2.4rem;
+      padding-top: 0.2em;
+      cursor: pointer;
+    }
+  }
+  .sidemenu__pages {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40.762%;
+    .curve {
+      width: 15px;
+      align-self: flex-end;
+      margin-right: -1px;
+      visibility: hidden;
+    }
+    .top-curve {
+      margin-bottom: -1px;
+    }
+    .bottom-curve {
+      margin-top: -1px;
+      margin-bottom: 0.5em;
+    }
+    .selected-curve {
+      visibility: visible;
+      animation: fade-in 0.2s ease-in-out;
+      background-color: transparent;
+      z-index: 0;
+      @keyframes fade-in {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    }
+    .sidemenu__pages__page {
+      display: flex;
+      align-items: center;
+      padding: 1.5em 0 1.5em 8%;
+      margin: 0 0 0 15%;
+      border-radius: 10px 0 0 10px;
+      z-index: 2;
+      .sidemenu__pages__page--title {
+        font-family: 'Josefin Sans';
+        font-weight: 500;
+        font-size: 1.75rem;
+        line-height: 1.5625;
+        padding-top: 0.2em;
+        background-color: transparent;
+      }
+      .sidemenu__pages__page--icon {
+        font-size: 1.75rem;
+        padding-right: 10%;
+        background-color: transparent;
+      }
+    }
+    .sidemenu__pages__page:hover {
+      background-color: rgba(46, 42, 49, 0.278);
+    }
+    .sidemenu__pages__page.selected {
+      background-color: white;
+      animation: fade-in 0.2s ease-in-out;
+      @keyframes fade-in {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    }
+    .selected:hover {
+      background-color: white;
+    }
+  }
+}

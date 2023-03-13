@@ -1,5 +1,4 @@
 "use strict";
-//Configuration code from udacity lesson 5: Configuring Jasmin
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -16,6 +15,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+//Configuration code from udacity lesson 5: Configuring Jasmin
 var jasmine_spec_reporter_1 = require("jasmine-spec-reporter");
 var CustomProcessor = /** @class */ (function (_super) {
     __extends(CustomProcessor, _super);

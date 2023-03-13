@@ -47,8 +47,10 @@ var isValid = function (input) { return __awaiter(void 0, void 0, void 0, functi
     return __generator(this, function (_b) {
         switch (_b.label) {
             case 0:
+                console.log(input.imagename);
+                console.log(input.width);
                 if (Object.keys(input).length === 0) {
-                    return [2 /*return*/, 'Please Enter a Valid Query in the Form: http://localhost:4000/api?filename={filename.jpg}&height={height}&width={width}'];
+                    return [2 /*return*/, 'Please Enter a Valid Query in the Form: http://localhost:4000/api?imagename={filename.jpg}&height={height}&width={width}'];
                 }
                 if ((input.width === undefined && input.height === undefined) ||
                     ((input.height < 0 || input.height === undefined) &&
@@ -107,6 +109,23 @@ router.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, f
                 _c.label = 6;
             case 6: return [2 /*return*/];
         }
+    });
+}); });
+router.get('/full', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var imagesURL, i;
+    return __generator(this, function (_a) {
+        try {
+            imagesURL = [];
+            for (i = 0; i < fileManager_1.default.availableImageList().length; i++) {
+                imagesURL[i] = "http://localhost:4000/images/full/".concat(fileManager_1.default.availableImageList()[i]);
+            }
+            res.send(imagesURL);
+        }
+        catch (error) {
+            console.log('Error Finding Avaialable Images Dir');
+            res.send(error);
+        }
+        return [2 /*return*/];
     });
 }); });
 exports.default = router;

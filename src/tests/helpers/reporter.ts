@@ -1,5 +1,4 @@
 //Configuration code from udacity lesson 5: Configuring Jasmin
-
 import {
   DisplayProcessor,
   SpecReporter,

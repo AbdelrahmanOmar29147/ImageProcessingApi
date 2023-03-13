@@ -15,6 +15,7 @@ const PORT = process.env.PORT || 4000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/api', images);
+app.use('/images', express.static('assets'));
 
 app.listen(PORT, () => {
   fileManager.isThumbFolderAndCreate();
